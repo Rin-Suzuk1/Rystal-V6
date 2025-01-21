@@ -24,8 +24,75 @@
 from nextcord.ui import View
 
 
+def get_base_permissions(default_perm):
+    """
+    Retrieve the base permissions from the default permissions.
+
+    Args:
+        default_perm (dict): The default permissions dictionary.
+
+    Returns:
+        list: The base permissions list.
+    """
+    return list(default_perm.keys())
+
+
+d = {
+    "ping": "everyone",
+    "info": "everyone",
+    "bug": "everyone",
+    "setting": {
+        "game": {"game_announce_channel": "admin,mod"},
+        "music": {
+            "silent_mode": "admin,mod",
+            "auto_leave": "admin,mod",
+            "default_loop_mode": "admin,mod",
+        },
+        "language": "admin,mod",
+    },
+    "music": {
+        "play": "everyone",
+        "skip": "everyone",
+        "queue": "everyone",
+        "shuffle": "everyone",
+        "loop": "everyone",
+        "nowplaying": "everyone",
+        "stop": "everyone",
+        "pause": "everyone",
+        "resume": "everyone",
+        "remove": "everyone",
+        "register": "everyone",
+        "most_played": "everyone",
+    },
+    "rank": {"card": "everyone", "leaderboard": "everyone"},
+    "point": {
+        "claim": "everyone",
+        "give": "everyone",
+        "show": "everyone",
+        "leaderboard": "everyone",
+    },
+    "permission": {"list": "admin,mod", "user": "admin", "role": "admin"},
+    "note": {
+        "create": "everyone",
+        "list": "everyone",
+        "view": "everyone",
+        "remove": "everyone",
+    },
+    "shop": {"catalog": "everyone", "buy": "everyone"},
+    "game": {
+        "rules": {"jackpot": "everyone"},
+        "jackpot": "everyone",
+        "dice": "everyone",
+        "roulette": "everyone",
+        "coinflip": "everyone",
+        "showjackpot": "everyone",
+    },
+}
+
+
 class PermissionViewer(View):
     def __init__(
         self,
     ):
+        super().__init__()
         raise NotImplementedError()
