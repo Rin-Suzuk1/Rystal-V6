@@ -64,7 +64,7 @@ To run the bot you simply have to install requirements in `requirements.txt`
 with `pip install -r <path-to>/requirements.txt`.<br>
 > [!TIP]
 > If you experienced this error `no module named 'pkg_resources'`, please install `setuptools`
-with `pip instll setuptools`*
+with `pip instll setuptools`.
 
 The main config file is `.env`, make a copy of `.env.example` and rename it into `.env` and enter the required
 tokens.<br>
